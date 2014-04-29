@@ -1,4 +1,4 @@
-var imageArray = new Array();
+/*var imageArray = new Array();
 
 imageArray[0] = "http://goo.gl/Hy0Kgx";
 imageArray[1] = "http://goo.gl/FZnXlK"; 
@@ -17,7 +17,7 @@ function swapImage() {
         i = 0;
     }
     window.setTimeout(swapImage, 3000);
-}
+}*/
 
 function Label(opt_options) {
     // Initialization

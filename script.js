@@ -78,3 +78,48 @@ Label.prototype.draw = function () {
     this.span_.innerHTML = this.get('text').toString();
 };
 
+(function () {
+    var mapCanvas = document.getElementById('map_canvas'),
+        mapOptions = {
+            center: new google.maps.LatLng(34.02851, -118.413835),
+            zoom: 14,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        },
+        map = new google.maps.Map(mapCanvas, mapOptions),
+        pos1 = new google.maps.LatLng(34.02851, -118.413835),
+        infowindow = new google.maps.InfoWindow({
+            content: "I live here" + ". ." + ". ."
+        }),
+        ArpadsHouse = new google.maps.Marker({
+            position: pos1,
+            map: map,
+            title: "Arpad's house",
+            visible: true
+            //          ,draggable: true
+        }),
+        label = new Label({
+            map: map
+        });
+    label.bindTo('position', ArpadsHouse, 'position');
+    label.bindTo('text', ArpadsHouse, 'title');
+    infowindow.open(map, ArpadsHouse);
+    var labelText = "Arpad's house",
+        myOptions = {
+            content: labelText,
+            boxStyle: {
+                border: "1px solid black",
+                textAlign: "center",
+                fontSize: "8pt",
+                width: "50px"
+            },
+            disableAutoPan: true,
+            pixelOffset: new google.maps.Size(-25, 0),
+            position: new google.maps.LatLng(34.02851, -118.413835),
+            closeBoxURL: "",
+            isHidden: false,
+            pane: "mapPane",
+            enableEventPropagation: true
+        },
+        ibLabel = new InfoBox(myOptions);
+    ibLabel.open(map);
+})();

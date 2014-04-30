@@ -1,4 +1,5 @@
 function validate() {
+	prompt("inside validate");
     var email = document.getElementById('email'),
         password = document.getElementById('password'),
         hasUpper = password.match(/[A-Z]/),

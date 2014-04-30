@@ -1,4 +1,4 @@
-/*var imageArray = new Array();
+var imageArray = new Array();
 
 imageArray[0] = "http://goo.gl/Hy0Kgx";
 imageArray[1] = "http://goo.gl/FZnXlK"; 
@@ -17,7 +17,7 @@ function swapImage() {
         i = 0;
     }
     window.setTimeout(swapImage, 3000);
-}*/
+}
 
 function Label(opt_options) {
     // Initialization
@@ -123,3 +123,22 @@ Label.prototype.draw = function () {
         ibLabel = new InfoBox(myOptions);
     ibLabel.open(map);
 })();
+
+    var i = 1,
+        create_link = function() {
+            $('<div/>', {
+                id: 'activeLink' + [i + 1],
+                href: '#' + [i + 1],
+                onclick: 'create_link();',
+                text: '#' + [i + 1]
+            }).appendTo('#activeLink' + [i]);
+            $('<span/>', {
+                id: 'nextText' + [i + 1]
+    /*,text: '<' + '===' + ' ' + 'clickable link'*/
+            }).appendTo('#activeLink' + [i + 1]);
+            i++;
+            document.getElementById('activeLink' + [i - 1]).setAttribute('onclick', '');
+    /*            if (i > 2) {
+                document.getElementById('activeLink' + [i - 1]).removeChild(document.getElementById('nextText' + [i]);
+    }*/
+        };

@@ -19,6 +19,7 @@ function swapImage() {
     window.setTimeout(swapImage, 3000);
 }*/
 
+/*
 function Label(opt_options) {
     // Initialization
     this.setValues(opt_options);
@@ -123,7 +124,7 @@ Label.prototype.draw = function () {
         ibLabel = new InfoBox(myOptions);
     ibLabel.open(map);
 })();
-
+*/
     var i = 1,
         create_link = function() {
             $('<div/>', {

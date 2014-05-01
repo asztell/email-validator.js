@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
 	<head><title>email validator</title>
-		<script src=""></script>
+		<script src="https://rawgithub.com/asztell/javascript/master/jQuery.js"></script>
+		<script src="email_validator.js"></script>
 	</head>
 	<body onload="executeOnLoad();">
-		<form>
+		<form name="validator_form">email
+			<br/>
 			<input type="email" id="email" name="email" />
+			<br/>password
+			<br/>
 			<input type="password" id="password" name="password" />
-			<input type="submit" value="Submit" />
+			<br/>
+			<input type="submit" id="submit_button" name="submit_button" value="Submit" />
 		</form>
-		<div id="d"></div>
 	</body>
 </html>

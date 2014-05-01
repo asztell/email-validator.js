@@ -1,7 +1,18 @@
+function stopDefaultAction(event) {
+    event.preventDefault();
+}
+
+$('submit_button')[0].addEventListener('submit', stopDefaultAction, false);
+
+function executeOnLoad() {
+    var el = $('#submit_button')[0];
+    el.addEventListener("click", validate, false);
+}
+
 function validate() {
-	prompt("inside identical github file");
-    var email = document.getElementById('email'),
-        password = document.getElementById('password'),
+    alert('inside embedded script validate');
+    var email = $('#email')[0],
+        password = $('#password')[0],
         hasUpper = password.match(/[A-Z]/),
         hasLower = password.match(/[a-z]/g),
         hasNumber = password.match(/[0-9]/g),
@@ -10,14 +21,10 @@ function validate() {
 
     if (isValidEmail && hasUpper && hasLower && hasNumber) {
         alert("Valid Email Address and Password");
-        return true;
+        //        return true;
     } else {
         alert("Not a valid e-mail address or password");
-        return false;
+        //        return false;
     }
 }
 
-function executeOnLoad() {
-    window.captureEvents(Event.SUBMIT);
-    window.onsubmit = validate;
-}

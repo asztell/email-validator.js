@@ -4,11 +4,6 @@ function stopDefaultAction(event) {
 
 $('submit_button')[0].addEventListener('submit', stopDefaultAction, false);
 
-function executeOnLoad() {
-    var el = $('#submit_button')[0];
-    el.addEventListener("click", validate, false);
-}
-
 function validate() {
     alert('inside github script validate');
     var email = $('#email')[0],
@@ -26,5 +21,10 @@ function validate() {
         alert("Not a valid e-mail address or password");
         //        return false;
     }
+}
+
+function executeOnLoad() {
+    var el = $('#submit_button')[0];
+    el.addEventListener("click", validate, false);
 }
 

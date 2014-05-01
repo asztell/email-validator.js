@@ -10,7 +10,7 @@ function executeOnLoad() {
 }
 
 function validate() {
-    alert('inside embedded script validate');
+    alert('inside github script validate');
     var email = $('#email')[0],
         password = $('#password')[0],
         hasUpper = password.match(/[A-Z]/),
